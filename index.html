@@ -28,7 +28,7 @@
 <meta name="twitter:title" content="Електрик Миколаїв | Виїзд 30 хвилин">
 <meta name="twitter:description" content="Терміновий електрик у Миколаєві. Ціни від 800 грн. Безкоштовний виїзд.">
 
-<!-- Favicon та Apple Touch Icon -->
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -36,7 +36,7 @@
 <meta name="apple-mobile-web-app-title" content="elektryk-mykolaiv" />
 <link rel="manifest" href="/site.webmanifest" />
   
-<!-- Schema.org структуровані дані для локального бізнесу (Електрик) -->
+<!-- Schema.org структуровані дані -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,55 +112,27 @@
   "review": [
     {
       "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Володимир"
-      },
+      "author": {"@type": "Person", "name": "Володимир"},
       "reviewBody": "Приїхав швидко, знайшов причину короткого замикання за 15 хвилин. Професіонал своєї справи!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
     },
     {
       "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ірина"
-      },
+      "author": {"@type": "Person", "name": "Ірина"},
       "reviewBody": "Акуратно замінив електропроводку в кімнаті, без бруду. Ціна сподобалася, приїхав вчасно.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
     },
     {
       "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Максим"
-      },
+      "author": {"@type": "Person", "name": "Максим"},
       "reviewBody": "Викликав вночі через вимкнення світла — приїхав через півгодини і все полагодив. Оперативно, якісно, за адекватну ціну.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
     },
     {
       "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Наталія"
-      },
+      "author": {"@type": "Person", "name": "Наталія"},
       "reviewBody": "Встановив Екофлоу. Дав гарантію на роботи. Дуже задоволена, тепер ми завжди зі світлом, все працює бездоганно.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
     }
   ]
 }
@@ -176,7 +148,6 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f5f6f8;
   color: #111;
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -293,7 +264,6 @@ button:hover {
   background: #dc2626;
 }
 
-/* Плаваючі кнопки справа */
 .floating-buttons {
   position: fixed;
   right: 15px;
@@ -334,13 +304,11 @@ button:hover {
   width: 32px;
   height: 32px;
 }
-
 .floating-btn.telegram svg {
   width: 42px;
   height: 42px;
 }
 
-/* Для мобільних пристроїв */
 @media (max-width: 480px) {
   .floating-buttons {
     right: 12px;
@@ -361,26 +329,11 @@ button:hover {
   }
 }
 
-/* Додаємо плавне центрування форми при переході */
-.form-highlight {
-  transition: all 0.2s ease;
-}
-
-.form-container {
-  scroll-margin-top: 20px;
-}
-
-/* Анімація підсвічування поля */
+/* Анімація підсвічування */
 @keyframes highlightPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 5px rgba(255, 152, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
+  70% { box-shadow: 0 0 0 5px rgba(255, 152, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
 }
 
 .highlight-input {
@@ -388,19 +341,14 @@ button:hover {
   border-color: #ff9800 !important;
 }
 
-/* Запобігаємо перекриттю вмісту клавіатурою */
-.input-focused {
+/* Важливий стиль для форми при активній клавіатурі */
+.keyboard-visible {
   position: relative;
 }
 
-/* Адаптація для високих екранів */
-@media (max-height: 600px) {
-  .container {
-    padding-bottom: 80px;
-  }
-  .floating-buttons {
-    bottom: 80px;
-  }
+/* Спеціальний контейнер для форми, який буде прокручуватися */
+.form-wrapper {
+  transition: all 0.2s ease;
 }
 </style>
 </head>
@@ -422,7 +370,7 @@ button:hover {
 • Зникло світло, не працюють розетки <br>
 • Усунення короткого замкнення<br>
 • Іскрить розетка або вимикач<br>
-• Мотаж EcoFlow, Інверторів<br>
+• Монтаж EcoFlow, Інверторів<br>
 • Заміна пробок на автомати
 </div>
 
@@ -477,25 +425,26 @@ button:hover {
 <b>⚡ Сьогодні залишилося 2 вільних виїзди електрика</b>
 </div>
 
-<!-- Блок форми з унікальним id та класом для центрування -->
+<!-- Блок форми з обгорткою -->
 <div class="block form-container" id="formBlock">
-<b style="color:#dc2f02; font-size:19px; background:linear-gradient(135deg, #fff5f5, #fff); padding:8px 12px; border-radius:30px; display:inline-block; box-shadow:0 2px 8px rgba(220,47,2,0.2);">💬 Залиште номер — передзвоню за 2 хвилини</b>  
-<form id="callbackForm">
-<input type="tel" id="phone" value="+380" required placeholder="+380XXXXXXXXX">
-<button type="submit">Передзвонити</button>
-</form>
+  <div id="formWrapper">
+    <b style="color:#dc2f02; font-size:19px; background:linear-gradient(135deg, #fff5f5, #fff); padding:8px 12px; border-radius:30px; display:inline-block; box-shadow:0 2px 8px rgba(220,47,2,0.2);">💬 Залиште номер — передзвоню за 2 хвилини</b>  
+    <form id="callbackForm">
+      <input type="tel" id="phone" value="+380" required placeholder="+380XXXXXXXXX" autocomplete="off">
+      <button type="submit" id="submitBtn">📞 Передзвонити</button>
+    </form>
+  </div>
 </div>
 </div>
 
 <div class="footer-buttons">
-<a class="btn call" href="tel:+380756177729">☎️ Дзвінок</a>
-<a class="btn telegram" href="#" id="scrollToFormBtn">💬 Заявка</a>
+  <a class="btn call" href="tel:+380756177729">☎️ Дзвінок</a>
+  <a class="btn telegram" href="#" id="scrollToFormBtn">💬 Заявка</a>
 </div>
 
 <div id="toast" class="toast"></div>
 
 <div class="floating-buttons">
-  <!-- Посилання Telegram та Viber з тим самим номером телефону -->
   <a href="https://t.me/+380756177729" class="floating-btn telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
       <path fill="#29b6f6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
@@ -513,7 +462,6 @@ button:hover {
 
 <footer style="background:#1a1a2e; color:#eee; padding:30px 20px 20px; margin-top:40px; font-size:14px;">
   <div style="max-width:600px; margin:0 auto; text-align:center;">
-    
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-bottom:25px;">
       <div style="min-width:150px;">
         <h4 style="color:#ff9800; margin-bottom:12px;">🕒 Години роботи</h4>
@@ -522,7 +470,6 @@ button:hover {
         <p style="margin:5px 0;">24/7</p>
         <p style="margin:5px 0;">Електрик Миколаїв Терміново</p>
       </div>
-      
       <div style="min-width:150px;">
         <h4 style="color:#ff9800; margin-bottom:12px;">📍 Миколаїв</h4>
         <p style="margin:5px 0;">Центр</p>
@@ -534,7 +481,6 @@ button:hover {
         <p style="margin:5px 0;">Водопій</p>     
         <p style="margin:5px 0;">Варварівка</p>
       </div>
-      
       <div style="min-width:150px;">
         <h4 style="color:#ff9800; margin-bottom:12px;">⚡ Послуги електрика</h4>
         <p style="margin:5px 0;">Монтаж лічильників</p>
@@ -543,19 +489,16 @@ button:hover {
         <p style="margin:5px 0;">Діагностика мережі</p>
       </div>
     </div>
-    
     <div style="border-top:1px solid #333; padding-top:20px; margin-top:10px;">
       <p style="margin:5px 0;">📞 <a href="tel:+380756177729" style="color:#25D366; text-decoration:none;">+380 75 617 77 29</a></p>
       <p style="margin:10px 0 5px;">© Електрик Миколаїв 2014 - 2026</p>
       <p style="margin:5px 0; font-size:12px; color:#888;">Всі права захищено</p> <br> 
       <span style="color:#f5b042;">★★★★★</span>
     </div>
-    
   </div>
 </footer>
 
 <script>
-// Функція для показу сповіщень
 function showToast(text, type = "success") {
   const toast = document.getElementById("toast");
   toast.innerText = text;
@@ -565,7 +508,6 @@ function showToast(text, type = "success") {
   }, 4000);
 }
 
-// Функція для встановлення курсора в поле вводу після +380
 function setCursorAfterPrefix(phoneInput) {
   if (phoneInput.value.startsWith('+380')) {
     phoneInput.setSelectionRange(4, 4);
@@ -574,37 +516,40 @@ function setCursorAfterPrefix(phoneInput) {
   }
 }
 
-// Покращена функція прокрутки до форми з урахуванням клавіатури
+// Головна функція - прокручує так, щоб і поле, і кнопка були видимі
 function scrollToFormAndFocus() {
-  const formElement = document.getElementById('formBlock');
+  const formBlock = document.getElementById('formBlock');
   const phoneInput = document.getElementById('phone');
+  const submitBtn = document.getElementById('submitBtn');
   
-  if (!formElement) return;
+  if (!formBlock) return;
   
-  // Отримуємо позицію форми
-  const elementRect = formElement.getBoundingClientRect();
+  // Отримуємо позицію кнопки (найнижчий елемент форми)
+  let targetElement = submitBtn || phoneInput || formBlock;
+  const elementRect = targetElement.getBoundingClientRect();
   const absoluteElementTop = elementRect.top + window.pageYOffset;
   
-  // Розраховуємо позицію прокрутки так, щоб поле вводу було у верхній половині екрану
-  // Це дасть додатковий простір для клавіатури
+  // Розраховуємо позицію: кнопка має бути на 100px вище нижнього краю екрану
+  // Це залишає місце для клавіатури (яка зазвичай займає ~300-400px)
   const windowHeight = window.innerHeight;
-  const targetOffset = 80; // Відступ від верху екрану (пікселів)
+  const desiredBottomMargin = 120; // Відступ від нижнього краю екрану
   
-  let scrollToPosition = absoluteElementTop - targetOffset;
+  // Прокручуємо так, щоб кнопка була на потрібній висоті
+  let scrollToPosition = absoluteElementTop - (windowHeight - desiredBottomMargin);
   
-  // Прокручуємо до розрахованої позиції
+  // Якщо прокрутка негативна - ставимо в 0
+  scrollToPosition = Math.max(0, scrollToPosition);
+  
   window.scrollTo({
     top: scrollToPosition,
     behavior: 'smooth'
   });
   
-  // Після прокрутки фокусуємо поле з невеликою затримкою
+  // Фокусуємо поле після прокрутки
   setTimeout(() => {
     if (phoneInput) {
       phoneInput.focus();
       setCursorAfterPrefix(phoneInput);
-      
-      // Додаємо візуальне підсвічування поля
       phoneInput.classList.add('highlight-input');
       setTimeout(() => {
         phoneInput.classList.remove('highlight-input');
@@ -612,24 +557,38 @@ function scrollToFormAndFocus() {
     }
   }, 400);
   
-  // Додаткове підстроювання через 500 мс після відкриття клавіатури
+  // Додаткове коригування через 500-800 мс (коли клавіатура вже з'явилася)
   setTimeout(() => {
     if (phoneInput && document.activeElement === phoneInput) {
-      // Перевіряємо, чи видиме поле після появи клавіатури
-      const inputRect = phoneInput.getBoundingClientRect();
-      if (inputRect.bottom > window.innerHeight - 50) {
-        // Якщо поле перекрито клавіатурою, доводимо його у видиму область
-        const newScrollPosition = window.pageYOffset + (inputRect.bottom - (window.innerHeight - 80));
+      const btnRect = submitBtn ? submitBtn.getBoundingClientRect() : null;
+      if (btnRect && btnRect.bottom > window.innerHeight - 20) {
+        // Якщо кнопка все ще перекрита - прокручуємо ще раз
+        const currentScroll = window.pageYOffset;
+        const extraScroll = (btnRect.bottom - window.innerHeight) + 30;
         window.scrollTo({
-          top: newScrollPosition,
+          top: currentScroll + extraScroll,
           behavior: 'smooth'
         });
       }
     }
   }, 500);
+  
+  setTimeout(() => {
+    if (phoneInput && document.activeElement === phoneInput) {
+      const btnRect = submitBtn ? submitBtn.getBoundingClientRect() : null;
+      if (btnRect && btnRect.bottom > window.innerHeight - 20) {
+        const currentScroll = window.pageYOffset;
+        const extraScroll = (btnRect.bottom - window.innerHeight) + 40;
+        window.scrollTo({
+          top: currentScroll + extraScroll,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, 800);
 }
 
-// Обробник для кнопки "Заявка" з унікальним ID
+// Обробник кнопки "Заявка"
 const scrollBtn = document.getElementById('scrollToFormBtn');
 if (scrollBtn) {
   scrollBtn.addEventListener('click', function(e) {
@@ -637,14 +596,6 @@ if (scrollBtn) {
     scrollToFormAndFocus();
   });
 }
-
-// Обробка всіх посилань, що ведуть до форми
-document.querySelectorAll('a[href="#form"], a[href="#formBlock"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    scrollToFormAndFocus();
-  });
-});
 
 // Обробка відправки форми
 document.getElementById("callbackForm").addEventListener("submit", function(e) {
@@ -682,19 +633,22 @@ document.getElementById("callbackForm").addEventListener("submit", function(e) {
   });
 });
 
-// Обробник фокусу на полі для додаткового прокручування при потребі
-const phoneInput = document.getElementById('phone');
-if (phoneInput) {
-  phoneInput.addEventListener('focus', function() {
-    // Невелика затримка для появи клавіатури
+// При фокусі на полі - додаткове коригування
+const phoneInputField = document.getElementById('phone');
+if (phoneInputField) {
+  phoneInputField.addEventListener('focus', function() {
     setTimeout(() => {
-      const inputRect = phoneInput.getBoundingClientRect();
-      if (inputRect.bottom > window.innerHeight - 50) {
-        const scrollPosition = window.pageYOffset + (inputRect.bottom - (window.innerHeight - 100));
-        window.scrollTo({
-          top: scrollPosition,
-          behavior: 'smooth'
-        });
+      const submitButton = document.getElementById('submitBtn');
+      if (submitButton) {
+        const btnRect = submitButton.getBoundingClientRect();
+        if (btnRect.bottom > window.innerHeight - 30) {
+          const currentScroll = window.pageYOffset;
+          const extraScroll = (btnRect.bottom - window.innerHeight) + 50;
+          window.scrollTo({
+            top: currentScroll + extraScroll,
+            behavior: 'smooth'
+          });
+        }
       }
     }, 300);
   });
