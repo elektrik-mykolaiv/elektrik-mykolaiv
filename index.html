@@ -167,119 +167,131 @@
 </script>
 
 <style>
-*{box-sizing:border-box;}
-
-body{
-margin:0;
-font-family:'Segoe UI', Arial, sans-serif;
-background:#f5f6f8;
-color:#111;
-scroll-behavior:smooth;
+* {
+  box-sizing: border-box;
 }
 
-.container{
-max-width:600px;
-margin:auto;
-padding:15px;
-padding-bottom:110px;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f6f8;
+  color: #111;
+  scroll-behavior: smooth;
 }
 
-h1{
-font-size:22px;
-text-align:center;
-margin-bottom:10px;
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 110px;
 }
 
-.sub{
-text-align:center;
-color:#555;
-margin-bottom:15px;
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.block{
-background:#fff;
-padding:15px;
-margin:10px 0;
-border-radius:10px;
-box-shadow:0 1px 3px rgba(0,0,0,0.05);
+.sub {
+  text-align: center;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-input{
-width:100%;
-padding:14px;
-font-size:16px;
-border-radius:8px;
-border:1px solid #ccc;
-margin-top:10px;
+.block {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-button{
-width:100%;
-padding:14px;
-font-size:16px;
-margin-top:10px;
-border:none;
-border-radius:8px;
-background:#ff9800;
-color:#fff;
-cursor:pointer;
-transition:background 0.3s;
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
 }
 
-button:hover{
-background:#e67e22;
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ff9800;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.footer-buttons{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-z-index:999;
+button:hover {
+  background: #e67e22;
 }
 
-.btn{
-flex:1;
-text-align:center;
-padding:14px;
-font-weight:bold;
-color:#fff;
-text-decoration:none;
-transition:opacity 0.3s;
+.footer-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 999;
 }
 
-.btn:hover{
-opacity:0.9;
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
 }
 
-.call{background:#25D366;}
-.telegram{background:#ff9800;}
-
-.toast{
-position:fixed;
-left:50%;
-bottom:30px;
-transform:translateX(-50%) translateY(20px);
-background:#111;
-color:#fff;
-padding:14px 18px;
-border-radius:10px;
-font-size:14px;
-opacity:0;
-transition:0.3s;
-z-index:9999;
-max-width:90%;
-text-align:center;
+.btn:hover {
+  opacity: 0.9;
 }
 
-.toast.show{
-opacity:1;
-transform:translateX(-50%) translateY(0);
+.call {
+  background: #25D366;
 }
 
-.toast.success{background:#16a34a;}
-.toast.error{background:#dc2626;}
+.telegram {
+  background: #ff9800;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%) translateY(20px);
+  background: #111;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 9999;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+  background: #16a34a;
+}
+
+.toast.error {
+  background: #dc2626;
+}
 
 /* Плаваючі кнопки справа */
 .floating-buttons {
@@ -322,6 +334,7 @@ transform:translateX(-50%) translateY(0);
   width: 32px;
   height: 32px;
 }
+
 .floating-btn.telegram svg {
   width: 42px;
   height: 42px;
@@ -342,10 +355,10 @@ transform:translateX(-50%) translateY(0);
     width: 34px;
     height: 34px;
   }
-.floating-btn.telegram svg {
+  .floating-btn.telegram svg {
     width: 48px;
     height: 48px;
-  }  
+  }
 }
 
 /* Додаємо плавне центрування форми при переході */
@@ -355,6 +368,39 @@ transform:translateX(-50%) translateY(0);
 
 .form-container {
   scroll-margin-top: 20px;
+}
+
+/* Анімація підсвічування поля */
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(255, 152, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+  }
+}
+
+.highlight-input {
+  animation: highlightPulse 0.8s ease-out;
+  border-color: #ff9800 !important;
+}
+
+/* Запобігаємо перекриттю вмісту клавіатурою */
+.input-focused {
+  position: relative;
+}
+
+/* Адаптація для високих екранів */
+@media (max-height: 600px) {
+  .container {
+    padding-bottom: 80px;
+  }
+  .floating-buttons {
+    bottom: 80px;
+  }
 }
 </style>
 </head>
@@ -502,16 +548,25 @@ transform:translateX(-50%) translateY(0);
       <p style="margin:5px 0;">📞 <a href="tel:+380756177729" style="color:#25D366; text-decoration:none;">+380 75 617 77 29</a></p>
       <p style="margin:10px 0 5px;">© Електрик Миколаїв 2014 - 2026</p>
       <p style="margin:5px 0; font-size:12px; color:#888;">Всі права захищено</p> <br> 
-<span style="color:#f5b042;">★★★★★</span></div>
+      <span style="color:#f5b042;">★★★★★</span>
+    </div>
     
   </div>
 </footer>
 
 <script>
-function focusPhone(){
-  const phoneInput = document.getElementById('phone');
-  phoneInput.focus();
-  // Ставимо курсор після +380 (на позицію 4)
+// Функція для показу сповіщень
+function showToast(text, type = "success") {
+  const toast = document.getElementById("toast");
+  toast.innerText = text;
+  toast.className = "toast show " + type;
+  setTimeout(() => {
+    toast.className = "toast";
+  }, 4000);
+}
+
+// Функція для встановлення курсора в поле вводу після +380
+function setCursorAfterPrefix(phoneInput) {
   if (phoneInput.value.startsWith('+380')) {
     phoneInput.setSelectionRange(4, 4);
   } else {
@@ -519,90 +574,93 @@ function focusPhone(){
   }
 }
 
-function showToast(text, type="success"){
-  const toast = document.getElementById("toast");
-  toast.innerText = text;
-  toast.className = "toast show " + type;
-
-  setTimeout(()=>{
-    toast.className = "toast";
-  }, 4000);
-}
-
-// Функція для плавної прокрутки до форми з центруванням на екрані
-function scrollToFormCenter() {
+// Покращена функція прокрутки до форми з урахуванням клавіатури
+function scrollToFormAndFocus() {
   const formElement = document.getElementById('formBlock');
-  if (formElement) {
-    const elementRect = formElement.getBoundingClientRect();
-    const absoluteElementTop = elementRect.top + window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    const elementHeight = elementRect.height;
-    const scrollToPosition = absoluteElementTop - (windowHeight / 2) + (elementHeight / 2);
-    
-    window.scrollTo({
-      top: scrollToPosition,
-      behavior: 'smooth'
-    });
-    setTimeout(() => {
-      const phoneInput = document.getElementById('phone');
-      if (phoneInput) {
-        phoneInput.focus();
-        if (phoneInput.value.startsWith('+380')) {
-          phoneInput.setSelectionRange(4, 4);
-        } else {
-          phoneInput.setSelectionRange(phoneInput.value.length, phoneInput.value.length);
-        }
-        phoneInput.style.transition = 'box-shadow 0.2s';
-        phoneInput.style.boxShadow = '0 0 0 3px rgba(255,152,0,0.4)';
-        setTimeout(() => {
-          phoneInput.style.boxShadow = '';
-        }, 800);
+  const phoneInput = document.getElementById('phone');
+  
+  if (!formElement) return;
+  
+  // Отримуємо позицію форми
+  const elementRect = formElement.getBoundingClientRect();
+  const absoluteElementTop = elementRect.top + window.pageYOffset;
+  
+  // Розраховуємо позицію прокрутки так, щоб поле вводу було у верхній половині екрану
+  // Це дасть додатковий простір для клавіатури
+  const windowHeight = window.innerHeight;
+  const targetOffset = 80; // Відступ від верху екрану (пікселів)
+  
+  let scrollToPosition = absoluteElementTop - targetOffset;
+  
+  // Прокручуємо до розрахованої позиції
+  window.scrollTo({
+    top: scrollToPosition,
+    behavior: 'smooth'
+  });
+  
+  // Після прокрутки фокусуємо поле з невеликою затримкою
+  setTimeout(() => {
+    if (phoneInput) {
+      phoneInput.focus();
+      setCursorAfterPrefix(phoneInput);
+      
+      // Додаємо візуальне підсвічування поля
+      phoneInput.classList.add('highlight-input');
+      setTimeout(() => {
+        phoneInput.classList.remove('highlight-input');
+      }, 800);
+    }
+  }, 400);
+  
+  // Додаткове підстроювання через 500 мс після відкриття клавіатури
+  setTimeout(() => {
+    if (phoneInput && document.activeElement === phoneInput) {
+      // Перевіряємо, чи видиме поле після появи клавіатури
+      const inputRect = phoneInput.getBoundingClientRect();
+      if (inputRect.bottom > window.innerHeight - 50) {
+        // Якщо поле перекрито клавіатурою, доводимо його у видиму область
+        const newScrollPosition = window.pageYOffset + (inputRect.bottom - (window.innerHeight - 80));
+        window.scrollTo({
+          top: newScrollPosition,
+          behavior: 'smooth'
+        });
       }
-    }, 400);
-  } else {
-    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => {
-      const phoneInput = document.getElementById('phone');
-      if (phoneInput) {
-        phoneInput.focus();
-        if (phoneInput.value.startsWith('+380')) {
-          phoneInput.setSelectionRange(4, 4);
-        }
-      }
-    }, 400);
-  }
+    }
+  }, 500);
 }
 
+// Обробник для кнопки "Заявка" з унікальним ID
 const scrollBtn = document.getElementById('scrollToFormBtn');
 if (scrollBtn) {
   scrollBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    scrollToFormCenter();
+    scrollToFormAndFocus();
   });
 }
 
+// Обробка всіх посилань, що ведуть до форми
 document.querySelectorAll('a[href="#form"], a[href="#formBlock"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    scrollToFormCenter();
+    scrollToFormAndFocus();
   });
 });
 
-// Обробка відправки форми (тай же самий URL для демонстрації)
-document.getElementById("callbackForm").addEventListener("submit", function(e){
+// Обробка відправки форми
+document.getElementById("callbackForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const phone = document.getElementById("phone").value.trim();
   const regex = /^\+380\d{9}$/;
 
-  if(!regex.test(phone)){
+  if (!regex.test(phone)) {
     showToast("Введіть номер у форматі +380XXXXXXXXX", "error");
     return;
   }
 
   fetch("https://santehnik.mk.ua/callback.php", {
     method: "POST",
-    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: "phone=" + encodeURIComponent(phone)
   })
   .then(res => res.text())
@@ -610,19 +668,37 @@ document.getElementById("callbackForm").addEventListener("submit", function(e){
     try {
       const data = JSON.parse(text);
       showToast(data.message, data.status);
-      if(data.status === "success"){
+      if (data.status === "success") {
         document.getElementById("phone").value = "+380";
       }
-    } catch(e){
+    } catch (e) {
       showToast("✅ Заявку надіслано! Зараз передзвоню", "success");
       document.getElementById("phone").value = "+380";
     }
   })
-  .catch(()=>{
+  .catch(() => {
     showToast("✅ Заявку прийнято! Зателефоную найближчим часом", "success");
     document.getElementById("phone").value = "+380";
   });
 });
+
+// Обробник фокусу на полі для додаткового прокручування при потребі
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+  phoneInput.addEventListener('focus', function() {
+    // Невелика затримка для появи клавіатури
+    setTimeout(() => {
+      const inputRect = phoneInput.getBoundingClientRect();
+      if (inputRect.bottom > window.innerHeight - 50) {
+        const scrollPosition = window.pageYOffset + (inputRect.bottom - (window.innerHeight - 100));
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
+  });
+}
 </script>
 </body>
 </html>
