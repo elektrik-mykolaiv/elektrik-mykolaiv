@@ -648,7 +648,7 @@ document.getElementById("callbackForm").addEventListener("submit", function(e){
     return;
   }
 
-  fetch("https://santehnik.mk.ua/callback.php", {
+  fetch("https://santehnik.mk.ua/callbacke.php", {
     method: "POST",
     headers: {"Content-Type": "application/x-www-form-urlencoded"},
     body: "phone=" + encodeURIComponent(phone)
